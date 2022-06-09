@@ -1,7 +1,11 @@
+import { Navbar, Home } from "./components";
+import './App.css'
+
 function App() {
   return (
     <div className="App">
-      <h1>Basto</h1>
+      <Navbar />
+      <Home />
     </div>
   );
 }

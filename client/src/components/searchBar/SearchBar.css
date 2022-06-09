@@ -1,0 +1,25 @@
+.searchBar__title {
+    font-weight: 400;
+}
+
+.searchBar__body {
+    width: 100%;
+    margin-bottom: 4rem;
+}
+
+.searchBar__body input {
+    font-size: 17px;
+    color: rgb(147, 201, 66);
+    width: 60%;
+    padding: 1rem;
+    border: 1px solid rgba(197, 197, 197, 0.822);
+}
+
+.searchBar__body input::placeholder {
+    color: rgb(155, 155, 155);
+    font-size: 15px;
+}
+
+.searchBar__body input:focus {
+    outline: none;
+}
