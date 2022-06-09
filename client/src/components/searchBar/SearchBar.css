@@ -4,7 +4,7 @@
 
 .searchBar__body {
     width: 100%;
-    margin-bottom: 4rem;
+    margin-bottom: 3rem;
 }
 
 .searchBar__body input {
@@ -22,4 +22,9 @@
 
 .searchBar__body input:focus {
     outline: none;
+}
+
+.searchBar__body button {
+    padding: 19px;
+    margin-left: 5px;
 }

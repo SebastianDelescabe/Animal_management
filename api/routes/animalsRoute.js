@@ -39,8 +39,9 @@ router.put("/:id", async function (req, res, next) {
 
 router.delete("/:id", async function (req, res, next) {
     const { id } = req.params
+
     try {
-        await Animals.findOneAndDelete(id);
+        await Animals.findByIdAndDelete(id);
         res.json({ message: 'animal borrado correctamente' })
     } catch (error) {
         res.send(error.message);

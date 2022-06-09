@@ -2,4 +2,23 @@
 
 body {
     font-family: 'Montserrat', sans-serif;
+    background-color: #f8f9fa;
+}
+
+.app__buttons {
+    border-radius: 5px;
+    border: none;
+    font-size: 14px;
+    background-color: rgb(147, 201, 66);
+    cursor: pointer;
+    color: white;
+    padding: 0.5rem 2rem ;
+    letter-spacing: 1.5px;
+}
+
+.no-select {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }

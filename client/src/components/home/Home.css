@@ -1,5 +1,5 @@
 .home {
-    padding: 3rem 4rem;
+    padding: 2rem 4rem;
 }
 
 .home__head {
@@ -9,14 +9,4 @@
 .home__head h3 {
     color: rgb(147, 201, 66);
     font-weight: 400;
-}
-
-.home__head button {
-    border-radius: 5px;
-    border: none;
-    font-size: 14px;
-    background-color: rgb(147, 201, 66);
-    cursor: pointer;
-    color: rgba(248, 248, 248, 0.822);
-    padding: 0.5rem 2rem ;
 }
