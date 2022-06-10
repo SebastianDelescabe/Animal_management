@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import { getAnimals } from '../../helpers';
-import SearchBar from '../searchBar/SearchBar';
-import AnimalTable from '../animalTable/AnimalTable';
-
+import { SearchBar, AnimalTable, AnimalForm } from '../../components';
 import './Home.css';
+
+
 const Home = () => {
 
     const [animals, setAnimals] = useState([])
+    const [openForm, setOpenForm] = useState(false)
 
     useEffect(() => {
         getAnimals()
@@ -25,16 +26,25 @@ const Home = () => {
                 <h1>Establecimiento Ganadero</h1>
                 <button
                     className='app__buttons'
+                    onClick={() => setOpenForm(true)}
                 >
                     Agregar nuevo animal
                 </button>
+                {openForm && (
+                    <AnimalForm
+                        setAnimals={setAnimals}
+                        openForm={openForm}
+                        setOpenForm={setOpenForm}
+                    />
+                )}
             </div>
             <div className='home__body'>
                 <SearchBar />
                 <h2>Lista de ganado</h2>
                 <AnimalTable
                     animals={animals}
-                    setAnimals={setAnimals} />
+                    setAnimals={setAnimals}
+                />
             </div>
         </div>
     )

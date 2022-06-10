@@ -3,6 +3,13 @@
 body {
     font-family: 'Montserrat', sans-serif;
     background-color: #f8f9fa;
+
+    /* non drageable or selected text on page, becaouse cliking pagination select text */
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
 }
 
 .app__buttons {
@@ -12,7 +19,7 @@ body {
     background-color: rgb(147, 201, 66);
     cursor: pointer;
     color: white;
-    padding: 0.5rem 2rem ;
+    padding: 0.5rem 2rem;
     letter-spacing: 1.5px;
 }
 

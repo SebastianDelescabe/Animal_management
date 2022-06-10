@@ -8,8 +8,10 @@ router.post("/", async function (req, res, next) {
         const animal = new Animals(req.body)
         await animal.save()
         res.send('Se agrego correctamente')
+        console.log('agregado correctamente');
     } catch (error) {
         res.send(error.message);
+        console.log(error);
     }
 })
 

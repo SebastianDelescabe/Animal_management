@@ -1,6 +1,6 @@
 import React from 'react';
 import { alertIcon, bastoLogo, logoutIcon } from '../../assets';
-import './Navbar.css'
+import './Navbar.css';
 
 const Navbar = () => {
     return (

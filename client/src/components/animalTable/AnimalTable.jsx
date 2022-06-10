@@ -13,7 +13,6 @@ const AnimalTable = ({ animals, setAnimals }) => {
     const [animalsPerPage, setAnimalsPerPage] = useState(3); // eslint-disable-line
     const max = Math.ceil(animals.length / animalsPerPage);
 
-
     return (
         <div className='AnimalTable'>
             <table>
@@ -34,7 +33,7 @@ const AnimalTable = ({ animals, setAnimals }) => {
                     ))}
                 </tbody>
             </table >
-            <div className='AnimalTable__pagination'>
+            <div className='AnimalTable'>
                 <Pagination
                     page={page}
                     setPage={setPage}

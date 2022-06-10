@@ -4,12 +4,6 @@
     justify-content: flex-end;
 }
 
-.pagination div span {
-    font-size: 14px;
-    cursor: pointer;
-    min-width: none;
-}
-
 .pagination__prevButton,
 .pagination__nextButton {
     background-color: transparent;
@@ -19,20 +13,11 @@
     font-size: 15px;
     padding: 10px;
     margin: 0px 5px;
-    border: 1px solid black;
+    border: 1px solid rgb(124, 124, 124);
 }
-
-.pagination__activePage {
-    margin: 0px 15px;
-    color: #D6F379;
-    font-size: 14px;
-
-}
-
-.pagination__lastNumber,
-.pagination__firstNumber {
-    margin: 0px 20px;
-    font-size: 14px;
-    width: 50px;
-    cursor: pointer;
+.pagination__prevButton:hover,
+.pagination__nextButton:hover {
+    transition: background-color .3s ease;
+    background-color: rgb(129, 129, 129);
+    color: white;
 }

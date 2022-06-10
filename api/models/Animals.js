@@ -9,7 +9,7 @@ const schemaAnimals = new mongoose.Schema({
     },
     animalType: {
         type: String,
-        enum: ['novillo', 'toro', 'vaquillona'],
+        enum: ['Novillo', 'Toro', 'Vaquillona'],
         required: true,
 
     },
@@ -25,7 +25,7 @@ const schemaAnimals = new mongoose.Schema({
     deviceType: {
         type: String,
         required: true,
-        enum: ['collar', 'caravana'],
+        enum: ['Collar', 'Caravana'],
     },
     deviceNumber: {
         type: String,

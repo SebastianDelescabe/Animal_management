@@ -26,7 +26,7 @@ export const deleteAnimals = (id, setAnimals) => {
                         })
                         setAnimals(response)
                     })
-            }, 600);
+            }, 400);
         }
     })
 }
