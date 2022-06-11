@@ -1,23 +1,13 @@
-import React, { useEffect, useState } from 'react';
-import { getAnimals } from '../../helpers';
-import { SearchBar, AnimalTable, AnimalForm } from '../../components';
+import React, { useState, useContext } from 'react';
+import { SearchBar, AnimalTable, AnimalAddForm } from '../../components';
+import { AnimalContext } from '../../context/AnimalContext';
 import './Home.css';
-
 
 const Home = () => {
 
-    const [animals, setAnimals] = useState([])
-    const [openForm, setOpenForm] = useState(false)
+    const { animals, setAnimals } = useContext(AnimalContext)
 
-    useEffect(() => {
-        getAnimals()
-            .then((response) => {
-                setAnimals(response)
-            })
-            .catch((error) => {
-                console.log(error)
-            })
-    }, [setAnimals])
+    const [openAddForm, setOpenAddForm] = useState(false)
 
     return (
         <div className='home'>
@@ -26,15 +16,15 @@ const Home = () => {
                 <h1>Establecimiento Ganadero</h1>
                 <button
                     className='app__buttons'
-                    onClick={() => setOpenForm(true)}
+                    onClick={() => setOpenAddForm(true)}
                 >
                     Agregar nuevo animal
                 </button>
-                {openForm && (
-                    <AnimalForm
+                {openAddForm && (
+                    <AnimalAddForm
                         setAnimals={setAnimals}
-                        openForm={openForm}
-                        setOpenForm={setOpenForm}
+                        openAddForm={openAddForm}
+                        setOpenAddForm={setOpenAddForm}
                     />
                 )}
             </div>

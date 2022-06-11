@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import { addAnimal, getAnimals } from '../../helpers';
-import './AnimalForm.css';
 
-const AnimalForm = ({ openForm, setOpenForm, setAnimals }) => {
+const AnimalAddForm = ({ openAddForm, setOpenAddForm, setAnimals }) => {
 
     const [inputForm, setInputForm] = useState({
         senasaId: '',
@@ -34,11 +33,11 @@ const AnimalForm = ({ openForm, setOpenForm, setAnimals }) => {
         getAnimals()
             .then((response) => {
                 setAnimals(response)
-                console.log(response);
+                setOpenAddForm(false)
             })
     }
 
-    if (openForm) {
+    if (openAddForm) {
         return (
             <div className='popup'>
                 <div className='popup-inner'>
@@ -46,7 +45,7 @@ const AnimalForm = ({ openForm, setOpenForm, setAnimals }) => {
                         <h1>Nuevo Animal</h1>
                         <button
                             className="close-btn"
-                            onClick={() => setOpenForm(false)}
+                            onClick={() => setOpenAddForm(false)}
                         >
                             close
                         </button>
@@ -109,4 +108,4 @@ const AnimalForm = ({ openForm, setOpenForm, setAnimals }) => {
     }
 }
 
-export default AnimalForm
+export default AnimalAddForm
