@@ -12,6 +12,7 @@ const AnimalCard = ({ animal, setAnimals }) => {
     const handleOnDelete = (id) => {
         deleteAnimals(id, setAnimals)
     }
+
     const handleOnUpdate = (id) => {
         setOpenUpdateForm(true)
     }
@@ -39,7 +40,8 @@ const AnimalCard = ({ animal, setAnimals }) => {
                         <AnimalUpdateForm
                             setOpenUpdateForm={setOpenUpdateForm}
                             openUpdateForm={openUpdateForm}
-                            animalUpdate = {animal}
+                            animalUpdate={animal}
+                            setAnimals={setAnimals}
                         />
                     )
                 }

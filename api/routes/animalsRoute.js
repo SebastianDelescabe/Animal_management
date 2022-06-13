@@ -29,7 +29,7 @@ router.put("/:id", async function (req, res, next) {
         const { id } = req.params //give the id of the animal to modify
         const animalChanges = req.body //give chabges makes in the animal
 
-        const newAnimal = await Animals.findOneAndUpdate(id,
+        const newAnimal = await Animals.findByIdAndUpdate(id,
             animalChanges, {
             new: true
         })

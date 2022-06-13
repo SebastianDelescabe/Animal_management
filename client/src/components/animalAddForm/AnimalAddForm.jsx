@@ -47,59 +47,67 @@ const AnimalAddForm = ({ openAddForm, setOpenAddForm, setAnimals }) => {
                             className="close-btn"
                             onClick={() => setOpenAddForm(false)}
                         >
-                            close
+                            X
                         </button>
                     </div>
                     <hr />
                     <div className="AnimalForm__body">
                         <form>
-                            <p>Senasa ID:</p>
+                            <span>Senasa ID:</span>
                             <input
                                 type='text'
                                 name="senasaId"
+                                placeholder='Senasa ID'
                                 value={inputForm.senasaId}
                                 onChange={handleInputChange}
                             />
-                            <p>Tipo de Animal</p>
+                            <span>Tipo de Animal</span>
                             <select
+                                required
                                 name='animalType'
                                 onChange={handleSelectChange}
                             >
+                                <option value="" selected disabled hidden >Tipo de Animal</option>
                                 <option value='Novillo'>Novillo</option>
                                 <option value='Toro'>Toro</option>
                                 <option value='Vaquillona'>Vaquillona</option>
                             </select>
-                            <p>Peso (KG)</p>
+                            <span>Peso (KG)</span>
                             <input
                                 type="text"
                                 name="weight"
+                                placeholder='Peso'
                                 value={inputForm.weight}
                                 onChange={handleInputChange}
                             />
-                            <p>Nombre del potrero</p>
+                            <span>Nombre del potrero</span>
                             <input
                                 type="text"
                                 name="paddockName"
+                                placeholder='Nombre del potrero'
                                 value={inputForm.paddockName}
                                 onChange={handleInputChange}
                             />
-                            <p>Tipo de dispositivo</p>
+                            <span>Tipo de dispositivo</span>
                             <select
+                                required
                                 name='deviceType'
                                 onChange={handleSelectChange}
                             >
+                                <option value="" selected disabled hidden >Tipo de dispositivo</option>
                                 <option value='Collar'>Collar</option>
                                 <option value='Caravana'>Caravana</option>
                             </select>
-                            <p>Número de dispositivo</p>
+                            <span>Número de dispositivo</span>
                             <input
                                 type="text"
                                 name="deviceNumber"
+                                placeholder='Número de dispositivo'
                                 value={inputForm.deviceNumber}
                                 onChange={handleInputChange}
                             />
-                            <br />
-                            <button onClick={handleOnSubmit}>Agregar</button>
+                            <br /><br />
+                            <button className='app__buttons ' onClick={handleOnSubmit}>Agregar Animal</button>
                         </form>
                     </div>
                 </div>
