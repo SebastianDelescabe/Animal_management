@@ -9,7 +9,6 @@ router.post("/", async function (req, res, next) {
         await animal.save()
         res.send('Se agrego correctamente')
     } catch (error) {
-        console.log(error);
         res.send(error);
         next();
     }

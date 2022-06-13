@@ -25,7 +25,6 @@ const SearchBar = ({ setAnimals }) => {
             //I bring animals from the database to always be filtering with what is there
             const animalsInBd = await getAnimals()
             const filterData = animalsInBd.filter(element => element.paddockName.toLowerCase().includes(inputSearch.toLowerCase()) || element.deviceNumber.includes(inputSearch))
-            console.log(filterData);
             if (filterData.length === 0) {
                 Swal.fire({
                     title: 'No se encontro resultado!',
