@@ -32,7 +32,7 @@ body {
 
 
 /* Form styles , addForm and updateForm */
-.popup {
+.AnimalForm {
     position: fixed;
     top: 0;
     left: 0;
@@ -45,13 +45,16 @@ body {
     align-items: center;
 }
 
-.popup-inner {
+.AnimalForm-dimensions {
     background-color: #FFF;
     width: 100%;
     border-radius: 20px;
     padding: 2rem;
-    max-width: 500px;
+    max-width: 550px;
     text-align: start;
+}
+.popup-inner em{
+    color: red;
 }
 
 .AnimalForm__title {
@@ -84,7 +87,7 @@ body {
     color: rgb(117, 189, 10);
     border: 1px solid rgb(209, 209, 209);
     margin-bottom: 20px;
-    width: 71.4%;
+    width: 61%;
     height: 30px;
     text-indent: 5px;
     font-size: 16px;
@@ -102,7 +105,7 @@ body {
 .AnimalForm__body input {
     border: 1px solid rgb(209, 209, 209);
     margin-bottom: 20px;
-    width: 70%;
+    width: 60%;
     height: 25px;
     text-indent: 10px;
     font-size: 16px;

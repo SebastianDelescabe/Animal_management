@@ -1,7 +1,6 @@
-import React, { useState } from 'react';
-import { useContext } from 'react';
+import React, { useState, useContext } from 'react';
 import { AnimalContext } from '../../context/AnimalContext';
-import { getAnimals, updateAnimal } from '../../helpers';
+import { getAnimals, updateAnimal, validateForm } from '../../helpers';
 
 const AnimalUpdateForm = ({ openUpdateForm, setOpenUpdateForm, animalUpdate }) => {
 
@@ -14,6 +13,11 @@ const AnimalUpdateForm = ({ openUpdateForm, setOpenUpdateForm, animalUpdate }) =
         paddockName: animalUpdate.paddockName,
         deviceType: animalUpdate.deviceType,
         deviceNumber: animalUpdate.deviceNumber,
+    })
+
+    const [errorDuplicate, setErrorDuplicate] = useState({
+        senasaId: false,
+        deviceNumber: false
     })
 
     const handleSelectChange = (e) => {
@@ -32,19 +36,27 @@ const AnimalUpdateForm = ({ openUpdateForm, setOpenUpdateForm, animalUpdate }) =
 
     const handleOnSubmit = async (e) => {
         e.preventDefault()
-        //add animal waiting response then get and set animals to reload results
-        await updateAnimal(animalUpdate._id, inputForm)
-        getAnimals()
-            .then((response) => {
-                setAnimals(response)
-                setOpenUpdateForm(false)
-            })
+
+        const duplicateErrors = await validateForm(inputForm,animalUpdate)
+        
+        if (duplicateErrors.senasaId || duplicateErrors.deviceNumber) {
+            setErrorDuplicate(duplicateErrors)
+        } else {
+            //update animal waiting response then get and set animals to reload results
+            await updateAnimal(animalUpdate._id, inputForm)
+            getAnimals()
+                .then((response) => {
+                    setAnimals(response)
+                    setOpenUpdateForm(false)
+                })
+
+        }
     }
 
     if (openUpdateForm) {
         return (
-            <div className='popup'>
-                <div className='popup-inner'>
+            <div className='AnimalForm'>
+                <div className='AnimalForm-dimensions'>
                     <div className='AnimalForm__title'>
                         <h1>Editar Animal</h1>
                         <button
@@ -66,8 +78,10 @@ const AnimalUpdateForm = ({ openUpdateForm, setOpenUpdateForm, animalUpdate }) =
                                 value={inputForm.senasaId}
                                 onChange={handleInputChange}
                                 maxLength={16}
-                                oninput="this.setCustomValidity('')"
                             />
+                            {
+                                errorDuplicate.senasaId && <em> ID duplicado</em>
+                            }
                             <span>Tipo de Animal</span>
                             <select
                                 required
@@ -122,8 +136,15 @@ const AnimalUpdateForm = ({ openUpdateForm, setOpenUpdateForm, animalUpdate }) =
                                 onChange={handleInputChange}
                                 maxLength={8}
                             />
+                            {
+                                errorDuplicate.deviceNumber && <em> Dispositivo en uso</em>
+                            }
                             <br /><br />
-                            <button className='app__buttons '>Editar Animal</button>
+                            <button
+                                className='app__buttons '
+                            >
+                                Editar Animal
+                            </button>
                         </form>
                     </div>
                 </div>
