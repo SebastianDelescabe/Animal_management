@@ -7,5 +7,5 @@ export {
     getAnimals,
     deleteAnimals,
     addAnimal,
-    updateAnimal
+    updateAnimal,
 }

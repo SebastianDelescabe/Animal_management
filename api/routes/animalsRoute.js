@@ -8,10 +8,9 @@ router.post("/", async function (req, res, next) {
         const animal = new Animals(req.body)
         await animal.save()
         res.send('Se agrego correctamente')
-        console.log('agregado correctamente');
     } catch (error) {
-        res.send(error.message);
-        console.log(error);
+        res.json({mensaje:'error al crear animal'});
+        next();
     }
 })
 
@@ -20,7 +19,8 @@ router.get("/", async function (req, res, next) {
         const animals = await Animals.find({});
         res.json({ message: 'animals en bd', animals })
     } catch (error) {
-        res.send(error.message);
+        res.send(error);
+        next();
     }
 })
 
@@ -35,7 +35,8 @@ router.put("/:id", async function (req, res, next) {
         })
         res.json({ message: 'animal', newAnimal })
     } catch (error) {
-        res.send(error.message);
+        res.send(error);
+        next();
     }
 })
 
@@ -46,7 +47,8 @@ router.delete("/:id", async function (req, res, next) {
         await Animals.findByIdAndDelete(id);
         res.json({ message: 'animal borrado correctamente' })
     } catch (error) {
-        res.send(error.message);
+        res.send(error);
+        next();
     }
 })
 
