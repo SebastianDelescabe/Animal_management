@@ -65,7 +65,7 @@ const AnimalUpdateForm = ({ openUpdateForm, setOpenUpdateForm, animalUpdate }) =
                                 placeholder='Senasa ID'
                                 value={inputForm.senasaId}
                                 onChange={handleInputChange}
-                                maxlength={16}
+                                maxLength={16}
                                 oninput="this.setCustomValidity('')"
                             />
                             <span>Tipo de Animal</span>
@@ -98,7 +98,7 @@ const AnimalUpdateForm = ({ openUpdateForm, setOpenUpdateForm, animalUpdate }) =
                                 placeholder='Nombre del potrero'
                                 value={inputForm.paddockName}
                                 onChange={handleInputChange}
-                                maxlength={200}
+                                maxLength={200}
                             />
                             <span>Tipo de dispositivo</span>
                             <select
@@ -120,7 +120,7 @@ const AnimalUpdateForm = ({ openUpdateForm, setOpenUpdateForm, animalUpdate }) =
                                 placeholder='Número de dispositivo'
                                 value={inputForm.deviceNumber}
                                 onChange={handleInputChange}
-                                maxlength={8}
+                                maxLength={8}
                             />
                             <br /><br />
                             <button className='app__buttons '>Editar Animal</button>

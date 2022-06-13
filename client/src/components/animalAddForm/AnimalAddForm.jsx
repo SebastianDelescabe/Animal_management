@@ -62,8 +62,7 @@ const AnimalAddForm = ({ openAddForm, setOpenAddForm, setAnimals }) => {
                                 placeholder='Senasa ID'
                                 value={inputForm.senasaId}
                                 onChange={handleInputChange}
-                                maxlength={16}
-                                oninput="this.setCustomValidity('')"
+                                maxLength={16}
                             />
                             <span>Tipo de Animal</span>
                             <select
@@ -95,7 +94,7 @@ const AnimalAddForm = ({ openAddForm, setOpenAddForm, setAnimals }) => {
                                 placeholder='Nombre del potrero'
                                 value={inputForm.paddockName}
                                 onChange={handleInputChange}
-                                maxlength={200}
+                                maxLength={200}
                             />
                             <span>Tipo de dispositivo</span>
                             <select
@@ -117,7 +116,7 @@ const AnimalAddForm = ({ openAddForm, setOpenAddForm, setAnimals }) => {
                                 placeholder='Número de dispositivo'
                                 value={inputForm.deviceNumber}
                                 onChange={handleInputChange}
-                                maxlength={8}
+                                maxLength={8}
                             />
                             <br /><br />
                             <button className='app__buttons '>Agregar Animal</button>

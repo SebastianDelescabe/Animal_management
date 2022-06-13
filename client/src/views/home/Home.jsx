@@ -29,7 +29,9 @@ const Home = () => {
                 )}
             </div>
             <div className='home__body'>
-                <SearchBar />
+                <SearchBar
+                    setAnimals={setAnimals}
+                />
                 <h2>Lista de ganado</h2>
                 <AnimalTable
                     animals={animals}

@@ -81,12 +81,22 @@ body {
 }
 
 .AnimalForm__body select {
+    color: rgb(117, 189, 10);
     border: 1px solid rgb(209, 209, 209);
     margin-bottom: 20px;
     width: 71.4%;
     height: 30px;
     text-indent: 5px;
     font-size: 16px;
+}
+
+.AnimalForm__body select option {
+    color: rgb(117, 189, 10);
+}
+
+.AnimalForm__body select:invalid,
+.AnimalForm__body select option[value=""] {
+    color: rgb(192, 190, 190);
 }
 
 .AnimalForm__body input {
@@ -106,14 +116,4 @@ body {
 
 .AnimalForm__body input::placeholder {
     color: rgb(184, 183, 183);
-}
-
-select,
-select option {
-    color: rgb(117, 189, 10);
-}
-
-select:invalid,
-select option[value=""] {
-    color: rgb(192, 190, 190);
 }
