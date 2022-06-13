@@ -14,7 +14,7 @@
 ### moongose (consultas querys y manejo en gral de mongoDB)
 
 # Iniciar proyecto
-### 1- git clone (''https://github.com/SebastianDelescabe/basto_challenge_sebastian-delescabe.git) 
+### 1- git clone (https://github.com/SebastianDelescabe/basto_challenge_sebastian-delescabe.git) 
 ### 2- npm install (dentro de /client y /api para instalar sus dependencias)
 ### 3- npm start (tanto para inciar Backend desde api como para iniciar frontend desde client)
 
