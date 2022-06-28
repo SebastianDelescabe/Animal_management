@@ -1,5 +1,3 @@
-﻿# Prueba Técnica Bastó - Sebastián Delescabe
-
 # Funcionalidades: 
 ### Creacion de base de datos en Mongo con sus modelos (bastoDB)
 ### Alta eliminacion y edición de animales creados en la base de datos.
